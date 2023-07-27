@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<div id="a"><b>first array</b><br></div>
+<div id="b"><br><b>second array</b><br></div>
+<div id="c"><br><b>third array</b><br></div>
+<div id="d"><br><b>fourth array</b><br></div>
+<div id="e"><br><b>2nd element of all arrays</b> <br></div>
+
+<script>
+
+    var a = [];
+    var b = [];
+    var c = {};
+    var d = []; //array with obj and nested array
+    var e;
+
+    for(i=0;i<10;i++){
+
+        a[i] = i+"_path";
+        b[i] = i;
+        c[a[i]] = b[i];
+    }
+        d[0] = {first_array:a};
+        d[1] = {second_array:b};
+        d[2] = {third_array:c};
+        
+        e = a[1]+"<br>"+b[1]+"<br>"+c["1_path"]+"<br>"+d[1].second_array;
+
+            
+document.getElementById("a").innerHTML += JSON.stringify(a);
+document.getElementById("b").innerHTML += JSON.stringify(b);
+document.getElementById("c").innerHTML += JSON.stringify(c);
+document.getElementById("d").innerHTML += JSON.stringify(d);
+document.getElementById("e").innerHTML += JSON.stringify(e);
+
+</script>
+</body>
+</html>
